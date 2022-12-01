@@ -96,3 +96,14 @@ y = [2]
 test2(x, y)
 print(x)             # [1]
 print(y)             # [2]
+
+
+def test3(a, b):     # assume a and b are mutable in this case
+    a.append(1111)   # a's identity does not change: modification can be seen outside the function
+    b[0] = 2222      # b's identity does not change: modification can be seen outside the function
+
+x = [1]
+y = [2]
+test3(x, y)
+print(x)             # [1, 1111]
+print(y)             # [2222]
